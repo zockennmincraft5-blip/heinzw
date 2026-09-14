@@ -1,0 +1,12 @@
+b ~ span > b{
+    color: red;
+}
+p span.wahrung{
+    background-color:  pink;
+}
+.wahrung ~ b {
+    font-size: 60px;
+}
+html > head ~ body > p > b~ #wichtig{
+    color: aquamarine;
+}

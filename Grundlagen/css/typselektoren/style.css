@@ -1,0 +1,15 @@
+body {
+    color: red;
+    border: solid;
+}
+h1{
+    color: blue;
+    border: inherit;
+}
+span{
+    color: gray;
+}
+b{
+    color: yellow;
+    border: inherit;
+}

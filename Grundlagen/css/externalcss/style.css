@@ -1,0 +1,16 @@
+.HTML {
+                background-color: blue;
+                color: white;
+            }
+           
+.h1 {
+    font-size: 70px;
+    text-decoration: underline;
+}
+.p {
+    color: rgb(255, 0, 0);
+}
+.span {
+    font-weight: bold;
+    color: white;
+}
