@@ -1,0 +1,30 @@
+html, body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    font-size: 20px;
+}
+#absolut{
+    width: 300px;
+    height: 300px;
+    font-size: 20px;
+    background-color: #f00;
+}
+#relativ-prozent{
+    width: 20%;
+    height: 20%;
+    background-color: #0F0;
+}
+#relativ-em{
+    font-size: 2em;
+
+}
+.relativ-em{
+    font-size: 2em;
+
+}
+.relativ-rem{
+    font-size: 2rem;
+
+}

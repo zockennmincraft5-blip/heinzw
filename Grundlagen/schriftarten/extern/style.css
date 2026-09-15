@@ -1,0 +1,25 @@
+
+body{
+    font-family: Tahoma, verdana, sans-serif;
+}
+#test1{
+    font-family: serif;
+}
+#test2{
+    font-family: sans-serif;
+}
+#test3{
+    font-family: cursive;
+}
+#test4{
+    font-family: fantasy;
+}
+#test5{
+    font-family: monospaces;
+}
+#test6{
+    font-family:  "Roboto", sans-serif;;
+}
+#test7{
+    font-family: "Shizuru", system-ui;
+}

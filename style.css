@@ -1,0 +1,48 @@
+
+@font-face {
+    font-family: "Noto sant";
+    src: url(noto-sant/NotoSans-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Noto sant";
+    src: url(noto-sant/NotoSans-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+body{
+    font-family: "Noto sant";
+    font-weight: 400;    
+    padding-left: 188px;
+}
+
+.seitentitel{
+    font-family: "Noto sant";
+    font-weight: 500;
+    padding-top: 88px;
+    padding-bottom: 16px;
+}
+.unterzeile{
+    padding-top: 16px;
+    padding-bottom: 64px;
+}
+.badge{
+    font-family: "Noto sant";
+    font-weight: 500;
+}
+.kartentitel{
+    font-family: "Noto sant";
+    font-weight: 500;
+}
+.containtbox{
+    border: 1px solid #232323;
+    padding:  16px 24px 24px 24px;
+
+    width: 270px;
+
+}
+.filterbar{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
