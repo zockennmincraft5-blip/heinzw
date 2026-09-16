@@ -1,0 +1,37 @@
+/*ein element mit einem bestimmten Atribut*/
+[href]{
+    background-color: gray;
+}
+/*Atribut mit wert filtern*/
+[id="eineid"]{
+    display: block;
+}
+
+/*irgend wo in einer liste von einem atribut*/
+[class~="wow"]{
+    height: 100px;
+}
+
+/*anfang oder binde strichs eines wertes*/
+[class |="test"]{
+    width: 300px;
+}
+
+/*beginn eines wertest*/
+[title^="ich bin"]{
+    border: 10px solid red;
+}
+
+/*atribut mit ende*/
+[title$="cooles anker"]{
+    color: white;
+}
+
+/*egal wo wird es ausgewählt*/
+[id*="ine"] {
+    text-decoration: none;
+}
+/*das ignoriert alles an große und kleinschreibung*/
+[id*="eId" i]{
+    font-weight: bold;
+}

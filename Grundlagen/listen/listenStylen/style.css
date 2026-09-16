@@ -1,0 +1,18 @@
+.List1{
+    list-style-type: square;
+}
+
+.List2{
+    list-style-position: inside;
+}
+
+.List3{
+    list-style-image: url(pfeil.png);
+}
+
+.List4{
+    list-style: square inside url(pfeil.png);
+}
+.List5 > li{
+    display: inline-block;    
+}

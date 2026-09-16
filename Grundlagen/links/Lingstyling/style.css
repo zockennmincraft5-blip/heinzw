@@ -1,0 +1,20 @@
+/*Love HAte*/
+a:link{
+    color: #000;
+}
+
+a:visited{
+    color: gray;
+}
+/*
+a:focus{
+
+}
+*/
+a:hover{
+    color: blue;
+}
+
+a:active{
+    color: red;
+}
