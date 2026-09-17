@@ -15,7 +15,8 @@
 body{
     font-family: "Noto sant";
     font-weight: 400;    
-    /*padding-left: 188px;*/
+    padding-left: 9.79166667%;
+    margin: 0 auto;
 }
 
 * {
@@ -27,23 +28,51 @@ body{
     font-weight: 500;
     padding-top: 88px;
     padding-bottom: 16px;
+    text-align: center;
 }
 .unterzeile{
     padding-top: 16px;
     padding-bottom: 64px;
+    text-align: center;
 }
-.badge{
-    font-family: "Noto sant";
-    font-weight: 500;
+
+.vorshow{
+    position: relative;
+    width: 100%;
+    height: auto;
 }
+
 .kartentitel{
     font-family: "Noto sant";
     font-weight: 500;
 }
-.containtbox{
-    height: 100%;
-    padding:  16px 24px 24px 24px;
-    
+
+.icons{
+    width: 18px;
+}
+.positions{
+    position: relative;
+}
+.textInBild {
+    position: absolute;
+    left: 16px;
+    bottom: 30px;
+}
+
+.badge{
+    font-family: "Noto sant";
+    font-weight: 500;
+    background-color: white;
+    height: 32px;    
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.dates{
+    padding-top: 16px;
+    padding-left: 24px;
 }
 
 .filterbar{
@@ -56,11 +85,14 @@ body{
 .container{
     width:95%;
     margin-right: auto;
-    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
 }
-
+/*
 .row {
     width: 100%;
+    height: 100%;
 }
 
 .row::after{
@@ -68,15 +100,18 @@ body{
     clear: both;
     display: block;
 }
+    */
 [class *="col-"]{ 
-    border: 1px solid #232323;
     float: left;
-    min-height: 1px;
-    height: auto;
+    min-height: 100%;
+    border: 1px solid #232323;
+    border-radius: 16px;
+    overflow: hidden;
+    
+    
 }
-
-.col-4{
-    width: 25%;
+.karteninfo{
+    padding:  16px 24px 24px 24px;
 }
 
 
@@ -102,20 +137,34 @@ Brakpoints
 */
 /*Media*/
 @media (max-width: 1024px){
-    .col-4{
-        width: 33.33%;
+    .container{
+        width:95%;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
     }
-
 }
 @media (max-width: 768px){
-    .col-4{
-      width: 50%;
+    .container{
+        width:95%;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
     }
 
 }
 @media (max-width: 650px){
-    .col-4{
-       width: 100%;
-    }
-
+    .container{
+        width:95%;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+}
+    body{
+    font-family: "Noto sant";
+    font-weight: 400;    
+}
 }

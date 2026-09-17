@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Strukturien</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <form action="index.html" method="get"> 
+            
+            <fieldset>
+
+                <legend>Personen Daten</legend>
+            
+                <label for="benutzername">Benutzername:</label><br>
+                <input id="benutzername"type="text" name="benutzername" placeholder="Benutzername"><br><br>
+                <fieldset>
+                    <label>Geschlecht</label>
+                    <label for="mänlich">Mänlich</label> 
+                    <input id="mänlich" type="radio" name="geschlecht" value="m"> 
+                    <label for="weiblich">Weiblich</label>
+                    <input id="weiblich" type="radio" name="geschlecht" value="w"> <br><br>           
+                </fieldset>
+            </fieldset>
+            
+            <br><br><br><br>
+
+            <fieldset>
+                <legend>Logindaten</legend>
+                <label for="email">E-mail: </label><br>
+                <input id="email" type="email" name="email" placeholder="Deine E-mail"><br><br>
+
+                <label for="passwort">Passwort: </label><br>
+                <input type="password" name="passwort" placeholder="dein Passwort"><br><br>
+            </fieldset>
+            
+            <br>
+            
+            <button type="submit">Abschicken</button>
+        </form>    
+
+    </body>
+
+</html>
