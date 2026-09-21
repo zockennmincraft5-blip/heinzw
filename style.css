@@ -40,13 +40,19 @@ body{
     position: relative;
     width: 100%;
     height: auto;
+    object-fit: cover
 }
 
 .kartentitel{
     font-family: "Noto sant";
     font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
-
+.kartentext{
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
 .icons{
     width: 14px;
     margin-right: 4px;
@@ -65,6 +71,7 @@ body{
     position: absolute;
     left: 16px;
     bottom: 30px;
+    display: flex;
 }
 
 .badge{
@@ -75,19 +82,18 @@ body{
     border: 1px solid black;
     border-radius: 6px;
     padding: 8px;
-    margin: 8px;
 }
 
 .dates{
     padding-top: 16px;
-    padding-left: 24px;
-    
-    display: inline-block;
+    display: flex;
 }
 
 .filterbar{
     padding-top: 64px;
     padding-bottom: 64px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
 }
 
 .avatar1 {
@@ -113,9 +119,12 @@ body{
 .avatar{
     display: inline-block;
     position: relative;
-    margin-left: 40px;
-    margin-bottom: 40px;
     align-items: center;
+    display: flex;
+}
+
+.platzhaltercard{
+    flex-grow: 2;
 }
 .cardbutton{
     border-radius: 50%;
@@ -123,10 +132,9 @@ body{
 	height: 40px;
     background-color: #fff;
     overflow: hidden;
-	border: 2px solid black;
-    float: right;
-    margin-bottom: 40px;
-    align-items: center;
+	border: 1px solid black;
+    display: inline-block;
+
 }
 
 .colorbar{
@@ -142,29 +150,19 @@ body{
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
-/*
-.row {
-    width: 100%;
-    height: 100%;
-}
 
-.row::after{
-    content: "";
-    clear: both;
-    display: block;
-}
-    */
 [class *="col-"]{ 
-    float: left;
+    display: flex;
     min-height: 100%;
     border: 1px solid #232323;
     border-radius: 16px;
     overflow: hidden;
+    flex-direction:column;
     
     
 }
 .karteninfo{
-    padding:  16px 24px 24px 24px;
+    padding:  0px 24px 8px 24px;
 }
 
 

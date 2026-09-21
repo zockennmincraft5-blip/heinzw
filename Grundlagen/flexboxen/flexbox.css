@@ -1,0 +1,61 @@
+/* === GENERELLES === */
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+  /* flex-box*/
+  .flexcontainer{
+    display: flex;
+    width: 1200px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #bfddff;
+    /*flex-direction: row; row: standart links nach rechts, row-reverse: um gekehrte richtung, colum:von oben nach unten, ccolum-revers umgekehrt von colum
+    flex-wrap: wrap;nowrap: stanndart, wrap: umbrechen wennnötig für die richtige größe, wrap-reverse: beim umbrechen wird es nach oben umbrechen*/
+    flex-flow: row wrap;
+    /*justify-content: space-around; cennter: centriet, flex-start: links bündig, flex-end: rechts bündig 
+                                     space-between: gleichmäßige verteilungen und stoßen links und rechts an denn rand, 
+                                     space-around gleichmäßig
+    align-items: center;   für die verticale stretch: verlängert zum ausfüllen, center: nur so groß wie es sein muss centriert, 
+                            flex-start: ganz oben, flex-end unten am container, baseline: ausrichtung der grundlinie*/
+    /*align-content: center; für die horizontale stretch: verlängert zum ausfüllen, center: nur so groß wie es sein muss centriert, 
+                            flex-start: ganz oben, flex-end unten am container, baseline: ausrichtung der grundlinie*/
+  }
+.flexcontainer > *{
+    background-color: #91c4ff;
+    flex-basis: 200px; /*inizalie größe*/
+    /*flex-grow: 3; gibt das verhältnis standart 0 bei änderung von einzelnen element änder es bei 4;1;1;1 zu 4:1:1:1 in der größere.*/
+    /*flex-shrink: 4; gibt das verhältnis standart 1 bei änderung von einzelnen element änder es bei 4;1;1;1 zu 4:1:1:1. beim schhrumpfen*/
+    /* nur flex kurzschreibweise*/
+
+  }  
+.flexcontainer>p:nth-of-type(1){
+  /* order: 4; */
+  align-self: auto;/* ist das selbe wie align item (auot schaut auf das davor)*/
+} 
+.flexcontainer>p:nth-of-type(2){
+  /* order: 1; */
+  align-self: center;
+} 
+.flexcontainer>p:nth-of-type(3){
+  /* order: 6; */
+  align-self: baseline;
+}
+.flexcontainer>p:nth-of-type(4){
+  /* order: 2; */
+  align-self: flex-end;
+} 
+.flexcontainer>p:nth-of-type(5){
+  /* order: 3; */
+  align-self: flex-start;
+} 
+.flexcontainer>p:nth-of-type(6){
+  /* order: 5; */
+  align-self: stretch;
+}

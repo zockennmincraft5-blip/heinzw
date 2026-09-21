@@ -1,0 +1,67 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+}
+
+/*@keyframes farbwechsel {
+  from{background-color: red;}
+    to {background-color: blue;}
+    0%{background-color: red;}
+    17%{background-color: orange;}
+    34%{background-color: yellow;}
+    51%{background-color: green;}
+    68%{background-color: lightblue;}
+    85%{background-color: indigo;}
+    100%{background-color: violet;}
+}*/
+@keyframes komplex{
+    0%{
+        background-color: red; 
+        top: 0px; 
+        left: 0px; 
+        width: 200px; 
+        height: 200px;
+    }
+    25%{
+        background-color: orange; 
+        top: 0px; 
+        left: 400px;
+        width: 100px; 
+        height: 100px;
+        }
+    50%{
+        background-color: yellow; 
+        top: 400px; 
+        left: 400px; 
+        width: 200px; 
+        height: 200px;
+    }
+    75%{
+        background-color: green; 
+        top: 400px; 
+        left: 0px; 
+        width: 300px; 
+        height: 300px;
+    }
+    100%{
+        background-color: lightblue; 
+        top: 0px; 
+        left: 0px;
+        width: 200px; 
+        height: 200px;
+    }
+}
+/* animation: name duration timing- funktion iteration count direction fill-mode play-state;*/
+#test{
+    position: relative;
+    animation: komplex 5s ease-in-out 2s infinite alternate-reverse both running;
+    /*animation: komplex;
+    animation-duration: 10s;
+    animation-delay: 2s;  es geht auch negatiev
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-timing-function: linear;  ease, ease-in ease-out, ease-in-out
+    animation-fill-mode: both;*/
+}
