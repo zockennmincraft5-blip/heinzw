@@ -16,5 +16,8 @@
 //     }
 // };
 let k = new Konto("DE6206752564419854","Max Mustermann",350)
+k.einzahlen(100)
+k.abheben(50)
+console.log(k.kontostand_abfragen())
 console.log(k)
 
