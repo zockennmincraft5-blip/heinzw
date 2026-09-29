@@ -5,25 +5,14 @@ let haushaltsbuch={
 
     eintraeg_sotieren(){
         this.eintraege.sort((eintrag_a, eintrag_b)=>{
-            if (eintrag_a.get("datum") > eintrag_b.get("datum")){
-                return -1
-            } else if (eintrag_a.get("datum")  < eintrag_b.get("datum")){
-                return 1
-            } else{
-                return 0
-            }
-        }
-    )
-    },
+            return eintrag_a.get("datum") > eintrag_b.get("datum") ? -1 :eintrag_a.get("datum")  < eintrag_b.get("datum")? 1 : 0 
+    })},
 
     html_eintrag_generien(eintrag){
         let listenpunkt  = document.createElement("li")
-        if (eintrag.get("type")=="einahme"){
-            listenpunkt.setAttribute("class", "einnahme")
-        } else {
-            listenpunkt.setAttribute("class", "ausgabe")
-        }
-        listenpunkt.setAttribute("data-tomstemp", eintrag.get("timestemp"))
+        eintrag.get("typ")=="einnahme"? listenpunkt.setAttribute("class", "einnahme") : listenpunkt.setAttribute("class", "ausgabe")
+
+        listenpunkt.setAttribute("data-timstemp", eintrag.get("timestemp"))
         let datum = document.createElement("span")
         datum.setAttribute("class", "datum")
         datum.textContent = eintrag.get("datum").toLocaleDateString("de-DE", {
@@ -50,10 +39,28 @@ let haushaltsbuch={
         let icon =document.createElement("i")
         icon.setAttribute("class", "fas fa-trash")
         button.insertAdjacentElement("afterbegin", icon)
-
+        this.html_eintrag_entfernen_event_hinzufuegen(listenpunkt)
         return listenpunkt
     },
-    
+    html_eintrag_entfernen_event_hinzufuegen(listenpunkt){
+        listenpunkt.querySelector(".entfernen-button").addEventListener("click", e=>{
+            let timstemp = e.target.parentElement.getAttribute("data-timstemp")
+            this.eintraeg_entfernen(timstemp)
+    })},
+    eintraeg_entfernen(timstemp){
+        let start_index
+        for(let i = 0; i<this.eintraege.length; i++){
+            if(this.eintraege[i].get("timestemp") == timstemp){
+                start_index = i
+                break
+        }}
+        this.eintraege.splice(start_index, 1)
+        this.eintraeg_sotieren()
+        this.berechnen()
+        this.eintraege_anzeigen()
+        this.gesamtbillanz_anzeigen()
+    },
+
     eintraege_anzeigen(){
         document.querySelectorAll(".monatsliste ul").forEach(eintragsliste =>eintragsliste.remove())
         let einrasliste = document.createElement("ul")
@@ -67,16 +74,14 @@ let haushaltsbuch={
         new_gesammt_billanz.set("ausgaben", 0)
         new_gesammt_billanz.set("billanz", 0)
         this.eintraege.forEach(eintrag =>{
-            switch(eintrag.get("type")){
-                case "einahme":
+            switch(eintrag.get("typ")){
+                case "einnahme":
                     new_gesammt_billanz.set("einamhmen", new_gesammt_billanz.get("einamhmen") + eintrag.get("betrag")) 
                     break
                 default:
                     new_gesammt_billanz.set("ausgaben", new_gesammt_billanz.get("ausgaben") + eintrag.get("betrag"))
                     break
-            }
-        
-    })
+        }})
     new_gesammt_billanz.set("billanz", new_gesammt_billanz.get("einamhmen")-new_gesammt_billanz.get("ausgaben"))
     this.gesammt_billanz = new_gesammt_billanz
     },
@@ -115,12 +120,8 @@ let haushaltsbuch={
         billanz_titel.textContent = "Bilanz:"
         billanz_zeile.insertAdjacentElement("afterbegin", billanz_titel)
         let billanz_betrag =document.createElement("span")
-        if(this.gesammt_billanz.get("billanz")>=0){
-            billanz_betrag.setAttribute("class", "positiv")
-            
-        } else if ((this.gesammt_billanz.get("billanz") < 0)){
-            billanz_betrag.setAttribute("class", "negativ")
-        }
+        this.gesammt_billanz.get("billanz")>=0 ? billanz_betrag.setAttribute("class", "positiv"): billanz_betrag.setAttribute("class", "negativ")
+        
         billanz_betrag.textContent = ` ${(this.gesammt_billanz.get("billanz")/100).toFixed(2).replace(/\./,".")} €`
         billanz_zeile.insertAdjacentElement("beforeend", billanz_betrag)
         gesammtbillanz.insertAdjacentElement("beforeend", billanz_zeile)
@@ -138,12 +139,10 @@ let haushaltsbuch={
         neuer_eintrag.set("betrag", formulardaten.betrag)
         neuer_eintrag.set("typ", formulardaten.typ)
         neuer_eintrag.set("datum", formulardaten.datum)
-        neuer_eintrag.set("timestamp", Date.now())
+        neuer_eintrag.set("timestemp", Date.now())
         this.eintraege.push(neuer_eintrag)
         this.eintraeg_sotieren()
         this.berechnen()
         this.eintraege_anzeigen()
         this.gesamtbillanz_anzeigen()
-
-    }
-}
+}}
