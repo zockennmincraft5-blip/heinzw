@@ -1,3 +1,10 @@
 "use strict"
+let nav = new Navigationsleiste()
+let eingabeformular = new Eingabeformular()
+let haushaltbuch = new Haushaltsbuch()
 
-eingabefummular.anzeigen()
+
+nav.anzeigen()
+haushaltbuch.anzeigen()
+
+eingabeformular.anzeigen()
