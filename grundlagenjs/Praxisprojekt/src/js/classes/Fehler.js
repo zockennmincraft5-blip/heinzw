@@ -35,4 +35,6 @@ class Fehler {
         let bestehnde_fehlerbox = document.querySelector(".fehlerbox")
         if (bestehnde_fehlerbox !== null){
             bestehnde_fehlerbox.remove
-}}}
+        }
+    }
+}

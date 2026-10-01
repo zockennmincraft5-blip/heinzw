@@ -50,23 +50,29 @@ class Eintrag {
             let timestamp = e.target.parentElement.getAttribute("data-timestamp")
             haushaltbuch.eintraeg_entfernen(timestamp)
     
-    })}
+        })
+    }
 
     html(){
         return this._html
     }
+    
     titel(){
         return this._titel
     }
+    
     betrag(){
         return this._betrag
-   }
+    }
+    
     typ(){
         return this._typ
     }
+ 
     datum(){
         return this._datum
-   }
+    }
+ 
    timstemp(){
         return this._timstemp
    }

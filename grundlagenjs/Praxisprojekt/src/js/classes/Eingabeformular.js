@@ -10,7 +10,8 @@ class Eingabeformular {
             betrag: parseFloat(e.target.elements.betrag.value)*100,
             typ: e.target.elements.einnahme.checked === false ? "ausgabe" : "einnahme",
             datum: e.target.elements.datum.valueAsDate
-    }}
+        }
+    }
 
     _formulardaten_vearbeiten(formulardaten){
         let fehler =[]
@@ -24,7 +25,7 @@ class Eingabeformular {
             fehler.push("Betrag")
         }
         return fehler
-        }
+    }
 
     
     _absenden_event_hinzufuegen(eingabefomular){
@@ -46,13 +47,15 @@ class Eingabeformular {
                 let fehler = new Fehler("folgende felder wurde nicht korrekt ausgefüllt: ", formular_fehler)
                 fehler.anzeigen()
             }
-    })}
+        })
+    }
 
     _datum_aktualesieren(){
         let datums_input = document.querySelector("#datum")
         if (datums_input !== null){
             datums_input.valueAsDate = new Date()
-    }}
+    }
+}
 
     _html_generiren(){
         let eingabeformular =document.createElement("section")
@@ -92,4 +95,6 @@ class Eingabeformular {
         if(navigationsleiste !== null){
                 navigationsleiste.insertAdjacentElement("afterbegin", this._html)
                 this._datum_aktualesieren()
-}}}
+        }
+    }
+}

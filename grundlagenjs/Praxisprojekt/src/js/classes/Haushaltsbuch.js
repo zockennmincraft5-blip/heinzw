@@ -2,6 +2,8 @@
 
 class Haushaltsbuch {
     constructor(){
+        this._nav = new Navigationsleiste()
+        this._eingabeformular = new Eingabeformular()
         this._eintraege = []
         this._monatslistensammlung = new Monatslistensammlung()
         this._gesammt_billanz = new Gesammtbillanz()
@@ -15,19 +17,20 @@ class Haushaltsbuch {
                 break
         }}
         this._eintraege.splice(start_index, 1)
+        this._monatslistensammlung.aktualesieren(this._eintraege)
         this._gesammt_billanz.berechnen(this._eintraege)
-        this._eintraeg_sotieren()
-        this._eintraege_anzeigen()
+        
     }
     
     eintrag_hinzufuegen(formulardaten){
         let neuer_eintrag = new Eintrag(formulardaten.titel, formulardaten.betrag, formulardaten.typ, formulardaten.datum)
         this._eintraege.push(neuer_eintrag);
         this._gesammt_billanz.berechnen(this._eintraege)
-        this._monatslistensammlung.eintrag_hinzufuegen(neuer_eintrag)
-
-}
-    anzeigen(){
+        this._monatslistensammlung.aktualesieren(this._eintraege)
+    }
+    start(){
+        this._nav.anzeigen()
+        this._eingabeformular.anzeigen()
         this._monatslistensammlung.anzeigen()
         this._gesammt_billanz.anzeigen()
     }

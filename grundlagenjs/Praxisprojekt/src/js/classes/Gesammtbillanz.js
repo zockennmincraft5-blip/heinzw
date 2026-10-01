@@ -40,7 +40,7 @@ class Gesammtbillanz {
         einahemn_titel.textContent = "Einahmen:"
         einahemn_zeile.insertAdjacentElement("afterbegin", einahemn_titel)
         let einahemn_betrag =document.createElement("span")
-        einahemn_betrag.textContent = `${(this._einahmen/100).toFixed(2).replace(/\./,".")} €`
+        einahemn_betrag.textContent = `${(this._einahmen/100).toFixed(2).replace(/\./,",")} €`
         einahemn_zeile.insertAdjacentElement("beforeend", einahemn_betrag)
         gesammtbillanz.insertAdjacentElement("beforeend", einahemn_zeile)
 
@@ -50,7 +50,7 @@ class Gesammtbillanz {
         ausgaben_titel.textContent = "Ausgaben:"
         ausgaben_zeile.insertAdjacentElement("afterbegin", ausgaben_titel)
         let ausgaben_betrag =document.createElement("span")
-        ausgaben_betrag.textContent = `-${(this._ausgaben/100).toFixed(2).replace(/\./,".")} €`
+        ausgaben_betrag.textContent = `-${(this._ausgaben/100).toFixed(2).replace(/\./,",")} €`
         ausgaben_zeile.insertAdjacentElement("beforeend", ausgaben_betrag)
         gesammtbillanz.insertAdjacentElement("beforeend", ausgaben_zeile)
 
@@ -62,7 +62,7 @@ class Gesammtbillanz {
         let billanz_betrag =document.createElement("span")
         this._billanz>=0 ? billanz_betrag.setAttribute("class", "positiv"): billanz_betrag.setAttribute("class", "negativ")
         
-        billanz_betrag.textContent = ` ${(this._billanz/100).toFixed(2).replace(/\./,".")} €`
+        billanz_betrag.textContent = ` ${(this._billanz/100).toFixed(2).replace(/\./,",")} €`
         billanz_zeile.insertAdjacentElement("beforeend", billanz_betrag)
         gesammtbillanz.insertAdjacentElement("beforeend", billanz_zeile)
         return gesammtbillanz
@@ -72,5 +72,6 @@ class Gesammtbillanz {
         let gesammtbillanz = document.querySelectorAll("gesamtbilanz")
         if (gesammtbillanz!== null){
         document.querySelector("body").insertAdjacentElement("beforeend", this._html_gemerien())
-    }}
+        }
+    }
 }

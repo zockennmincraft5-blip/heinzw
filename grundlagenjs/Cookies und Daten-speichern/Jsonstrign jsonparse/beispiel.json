@@ -1,0 +1,20 @@
+{
+    "vorname": "Max",
+    "nachname": "Mustermann",
+    "alter": 30,
+    "ledig": true,
+    "freunde": [
+        {
+            "vorname": "Anna",
+            "nachname": "Müller",
+            "alter": 28,
+            "ledig": true
+        },
+        {
+            "vorname": "Peter",
+            "nachname": "Schmidt",
+            "alter": 32,
+            "ledig": false
+        }
+    ]
+}

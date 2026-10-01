@@ -29,6 +29,4 @@ class Navigationsleiste {
             body.insertAdjacentElement("afterbegin", this._html);
         }
     }
-
-    
 }
