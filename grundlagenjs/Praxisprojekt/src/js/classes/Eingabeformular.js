@@ -1,6 +1,6 @@
-"use strict"
-
-class Eingabeformular {
+import Fehler from "./Fehler.js"
+import haushaltbuch from "../main.js"
+export default class Eingabeformular {
     constructor(){
         this._html = this._html_generiren()
     }
@@ -39,7 +39,7 @@ class Eingabeformular {
                 haushaltbuch.eintrag_hinzufuegen(formulardaten)
                 let bestehnde_fehlerbox = document.querySelector(".fehlerbox")
                 if (bestehnde_fehlerbox !== null){
-                    bestehnde_fehlerbox.remove
+                    bestehnde_fehlerbox.remove()
                 }
                 e.target.reset()
                 this._datum_aktualesieren()

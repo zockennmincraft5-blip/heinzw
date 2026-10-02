@@ -1,6 +1,5 @@
-"use strict"
-
-class Monatslistensammlung {
+import Monatsliste  from "../classes/Monatsliste.js"
+export default class Monatslistensammlung {
     constructor(){
         this._monastlisten = []
         this._hmtl = this._hmtl_generieren()

@@ -1,6 +1,4 @@
-"use strict"
-
-class Gesammtbillanz {
+export default class Gesammtbillanz {
     constructor(){
         this._einahmen = 0
         this._ausgaben = 0

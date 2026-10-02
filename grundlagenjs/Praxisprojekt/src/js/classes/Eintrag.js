@@ -1,6 +1,5 @@
-"use strict"
-
-class Eintrag {
+import haushaltsbuch from "../main.js" 
+export default class Eintrag {
 
     constructor(titel, betrag, typ, datum){
         this._titel = titel
@@ -18,7 +17,7 @@ class Eintrag {
         
         let datum = document.createElement("span")
         datum.setAttribute("class", "datum")
-        datum.textContent = this._datum.toLocaleDateString("de-DE", {
+        datum.textContent = this._datum.toLocaleString("de-DE", {
             year: "numeric",
             month:"2-digit",
             day: "2-digit",
@@ -48,7 +47,8 @@ class Eintrag {
     _html_eintrag_entfernen_event_hinzufuegen(listenpunkt){
         listenpunkt.querySelector(".entfernen-button").addEventListener("click", e => {
             let timestamp = e.target.parentElement.getAttribute("data-timestamp")
-            haushaltbuch.eintraeg_entfernen(timestamp)
+            console.log("timestamp: " + timestamp)
+            haushaltsbuch.eintraeg_entfernen(timestamp)
     
         })
     }
