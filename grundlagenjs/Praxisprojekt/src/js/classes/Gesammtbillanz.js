@@ -1,11 +1,28 @@
+/**
+ * Das module "gesammtbillanz" verarbeitet die Gesamtbilanz des liquiPlanners.
+ */
 export default class Gesammtbillanz {
+    /**
+     * Konstruktor der Klasse Gesammtbillanz.
+     * Initialisiert die Einnahmen, Ausgaben und Bilanz auf 0 und generiert das HTML-Element für die Gesamtbilanz.
+     * @param {Number} einahmen - Repäsentiert alle einahmen
+     * @param {Number} ausgaben - Repäsentiert alle ausgaben
+     *  @param {Number} billant - Repäsentier die Gesammtbillanz
+     * 
+     */
     constructor(){
         this._einahmen = 0
         this._ausgaben = 0
         this._billanz = 0
         this.html = this._html_gemerien()
     }
-
+    /**
+     * Diese Methode berechnet die gesammt ein/ausgaben und die billant daraus
+     * @param {eintraege} eintraege - der eintrag
+     * @param {Number} einahmen - Repäsentiert alle einahmen
+     * @param {Number} ausgaben - Repäsentiert alle ausgaben
+     * @param {Number} billant - Repäsentier die Gesammtbillanz
+     */
     berechnen(eintraege){
         this._einahmen = 0
         this._ausgaben = 0
@@ -23,7 +40,10 @@ export default class Gesammtbillanz {
     this.html = this._html_gemerien()
     this.anzeigen()    
 }
-
+    /**
+     * Es erstellt die gesammtbillanz html
+     * @returns {Html_billanz} - Es gibt die generite html zurück
+     */
     _html_gemerien(){
         let gesammtbillanz = document.createElement("aside")
         gesammtbillanz.setAttribute("id","gesamtbilanz")
@@ -65,7 +85,9 @@ export default class Gesammtbillanz {
         gesammtbillanz.insertAdjacentElement("beforeend", billanz_zeile)
         return gesammtbillanz
     }
-    
+    /**
+     * Die Methode sorgt für das neu laden und anzeigen
+     */
     anzeigen(){
         let gesammtbillanz = document.querySelectorAll("gesamtbilanz")
         if (gesammtbillanz!== null){

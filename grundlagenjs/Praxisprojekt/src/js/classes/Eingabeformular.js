@@ -1,18 +1,43 @@
-import Fehler from "./Fehler.js"
-import haushaltbuch from "../main.js"
+/** 
+ * Das modul "Eingabeformular" ist für die Erstellung und Verwaltung des Eingabeformulars für neue Einträge zuständig.
+ * @module classes/Eingabeformular
+ * das module "liquiPlanner" ist für die eintraege verwaltung zuständig
+ * @module ../main.js
+ */
+import Fehlerbox from "./Fehlerbox.js"
+import haushaltbuch from "../liquiPlanner.js"
+/**
+ * Diese Klasse Eingabeformular stellt alle methoden, 
+ * für neue Einträge zur Verfügung.
+ */
 export default class Eingabeformular {
+    /**
+     * Konstruktor der Klasse Eingabeformular.
+     * Initialisiert die HTML-Elemente des Eingabeformulars.
+     * @property {Element} _html - Das HTML-Element des Eingabeformulars.
+     */
     constructor(){
         this._html = this._html_generiren()
     }
-    _formulardaten_holen(e){
+    /**
+     *  Diese Methode holt die Daten aus dem Formular und gibt sie als Objekt zurück.
+     * @param {Event} submit_event - Das Event, das beim Absenden des Formulars ausgelöst wird.
+     * @returns {Object} formulardaten - Ein Objekt, das die Daten des Formulars enthält.
+     */
+    _formulardaten_holen(submit_event){
         return {
-            titel: e.target.elements.titel.value.trim(),
-            betrag: parseFloat(e.target.elements.betrag.value)*100,
-            typ: e.target.elements.einnahme.checked === false ? "ausgabe" : "einnahme",
-            datum: e.target.elements.datum.valueAsDate
+            titel: submit_event.target.elements.titel.value.trim(),
+            betrag: parseFloat(submit_event.target.elements.betrag.value)*100,
+            typ: submit_event.target.elements.einnahme.checked === false ? "ausgabe" : "einnahme",
+            datum: submit_event.target.elements.datum.valueAsDate
         }
     }
 
+    /**
+     *  Diese Methode überprüft die Formulardaten auf Gültigkeit.
+     * @param {Object} formulardaten - Ein Objekt, das die Daten des Formulars enthält.
+     * @returns {Array} fehler - Ein Array mit den Namen der fehlerhaften Felder.
+     */
     _formulardaten_vearbeiten(formulardaten){
         let fehler =[]
         if (formulardaten.titel === ""){
@@ -27,7 +52,11 @@ export default class Eingabeformular {
         return fehler
     }
 
-    
+    /**
+     *  Diese Methode fügt dem Formular ein Event hinzu, das beim Absenden des Formulars ausgelöst wird.
+     * @param {Element} eingabefomular - Das HTML-Element des Eingabeformulars.
+     */
+
     _absenden_event_hinzufuegen(eingabefomular){
         eingabefomular.querySelector("#eingabeformular").addEventListener("submit", e => {
             e.preventDefault()
@@ -44,11 +73,15 @@ export default class Eingabeformular {
                 e.target.reset()
                 this._datum_aktualesieren()
             } else{
-                let fehler = new Fehler("folgende felder wurde nicht korrekt ausgefüllt: ", formular_fehler)
+                let fehler = new Fehlerbox("folgende felder wurde nicht korrekt ausgefüllt: ", formular_fehler)
                 fehler.anzeigen()
             }
         })
     }
+
+    /**
+     *  Diese Methode aktualisiert das Datum im Formular auf das aktuelle Datum.
+     */
 
     _datum_aktualesieren(){
         let datums_input = document.querySelector("#datum")
@@ -56,7 +89,10 @@ export default class Eingabeformular {
             datums_input.valueAsDate = new Date()
     }
 }
-
+    /**
+     *  Diese Methode generiert das HTML für das Eingabeformular.
+     * @returns {Element} eingabeformular - Das HTML-Element des Eingabeformulars.
+     */
     _html_generiren(){
         let eingabeformular =document.createElement("section")
         eingabeformular.setAttribute("id", "eingabeformular-container")
@@ -77,9 +113,9 @@ export default class Eingabeformular {
         <div class="eingabeformular-zeile">
             <div class="betrag-datum-eingabe-gruppe">
                 <label for="betrag">Betrag</label>
-                <input type="number" id="betrag" name="betrag" form="eingabeformular" placeholder="z.B. 10,42" size="10" step="0.01" title="Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)">
+                <input type="number" id="betrag" name="betrag" form="eingabeformular" placeholder="z.B. 10,42" size="10" step="0.01" title="Betrag des Eintrags (max. zwei Nachkommastellen, kein €-Zeichen)" min="0.01">
                 <label for="datum">Datum</label>
-                <input type="date" id="datum" name="datum" form="eingabeformular" placeholder="jjjj-mm-tt" size="10" title="Datum des Eintrags (Format: jjjj-mm-tt)">
+                <input type="date" id="datum" name="datum" form="eingabeformular" size="10" title="Datum des Eintrags">
             </div>
         </div>
         <div class="eingabeformular-zeile">
@@ -89,11 +125,13 @@ export default class Eingabeformular {
         this._absenden_event_hinzufuegen(eingabeformular);
         return eingabeformular;
     }
-
+    /**
+     *  Diese Methode zeigt das Eingabeformular an.
+     */
     anzeigen(){
-        let navigationsleiste = document.querySelector("body")
+        let navigationsleiste = document.querySelector("#navigationsleiste")
         if(navigationsleiste !== null){
-                navigationsleiste.insertAdjacentElement("afterbegin", this._html)
+                navigationsleiste.insertAdjacentElement("afterend", this._html)
                 this._datum_aktualesieren()
         }
     }

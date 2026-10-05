@@ -1,4 +1,12 @@
+/**
+ * Die classe monatsliste erstellt und sotiert die monatsliste
+ */
 export default class Monatsliste {
+    /**
+     * Konstruktur der classe inaliesiert alle elemente des liquiPlanner
+     * @param {number} jahr 
+     * @param {number} monat 
+     */
     constructor(jahr, monat){
         this._jahr = jahr
         this._monat = monat
@@ -7,18 +15,34 @@ export default class Monatsliste {
         this._hmtl = this._hmtl_generieren()
     }
 
+    /**
+     * Diese Methode ist dafür zuständig für dsas wir aushalb zuzugreifen
+     * @returns {monat} - Returnt denn monat
+     */
     monat(){
         return this._monat
     }
-
+    
+    /**
+     * Diese Methode ist dafür zuständig für dsas wir aushalb zuzugreifen
+     * @returns {jahr} - Returnt denn Jahr
+     */
     jahr(){
         return this._jahr
     }
 
+    /**
+     * Diese Methode ist dafür zuständig für dsas wir aushalb zuzugreifen
+     * @returns {html} - Returnt das html
+     */
     html(){
         return this._hmtl
     }
 
+    /**
+     * Diese Methode ist dafür zuständig das html eines elementes zu generien
+     * @returns {html} - returnt das generite html
+     */
     _hmtl_generieren(){
         let monatsliste = document.createElement("article")
         monatsliste.setAttribute("class", "monatsliste")
@@ -47,13 +71,28 @@ export default class Monatsliste {
         return monatsliste
 
     }
-
-    _eintraeg_sotieren(){
-        this._eintraege.sort((eintrag_a, eintrag_b)=>{
-            return eintrag_a.datum() > eintrag_b.datum() ? -1 :eintrag_a.datum()  < eintrag_b.datum()? 1 : eintrag_a.timstemp() > eintrag_b.timstemp() ? -1 : 1
-        }
-    )
-}
+    /**
+     * Diese Methode sotiert die eintrage inhalb der liste
+     */
+    _eintraeg_sotieren() {
+        this._eintraege.sort((eintrag_a, eintrag_b) => {
+            if (eintrag_a.datum() > eintrag_b.datum()) {
+                return -1;
+            } else if (eintrag_a.datum() < eintrag_b.datum()) {
+                return 1;
+            } else {
+                if (eintrag_a.timestamp() > eintrag_b.timestamp()) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        });
+    }
+    /**
+     * Diese Methode ist dafür zuständig die monats billans zu errechnen
+     * @param {object} eintraege - ist der eintraeg mit denn daten 
+     */
     berechnen(eintraege){
         this._einahmen = 0
         this._ausgaben = 0
@@ -72,12 +111,14 @@ export default class Monatsliste {
     this._billanz = this._einahmen - this._ausgaben
 
 }
-
+    /**
+     * Diese methode ust dafür zuständig alle internen methoden zu steuern
+     * @param {object} eintrag - ist der eintraeg mit denn daten
+     */
     monatsliste_hinzufuegen(eintrag){
         this._billanz += eintrag.typ() === "einnahme" ? eintrag.betrag() : -eintrag.betrag()
         this._eintraege.push(eintrag)
         this._eintraeg_sotieren()
-        
         this._hmtl = this._hmtl_generieren()
     }
 }

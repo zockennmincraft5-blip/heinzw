@@ -1,10 +1,15 @@
-
+/**
+ * diese klaasse generiet die Navigationsleiste
+ */
 export default class Navigationsleiste {
 
     constructor() {
         this._html = this._html_generieren();
     }
-
+    /**
+     * Das module generiet die navigationsleiste
+     * @returnt die generiete Navigationlseiste
+     */
     _html_generieren() {
         let navigationsleiste = document.createElement("nav");
         navigationsleiste.setAttribute("id", "navigationsleiste");
@@ -14,14 +19,16 @@ export default class Navigationsleiste {
 
         let span = document.createElement("span");
         span.setAttribute("id", "markenname");
-        span.textContent = "Liqui-Planner";
+        span.textContent = "liquiPlanner";
         anker.insertAdjacentElement("afterbegin", span);
 
         navigationsleiste.insertAdjacentElement("afterbegin", anker);
 
         return navigationsleiste;
     }
-
+    /**
+     * das module zeigt die navigationsleiste an
+     */
     anzeigen() {
         let body = document.querySelector("body");
         if (body !== null) {
