@@ -1,0 +1,17 @@
+{
+    "id": "nachhaltiges-bauen-grundlagen",
+    "titel": "Nachhaltiges Bauen – Grundlagen & Praxis",
+    "beschreibung": "Lernen Sie die Neuesten Standards und Methoden für nachhaltiges Bauene kennen",
+    "format": "Webinar",
+    "thema": "EPDs",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-08-11T10:30:00", 
+    "ende": "2026-08-11T11:00:00",
+    "dauerMinuten": null, 
+    "ort": "Online",
+    "bild": "../Bilder/kurs-01.jpg",
+    "dozenten": [
+    { "name": "Erfundener Name", "avatar": "bilder/avatar-1.jpg" },
+    { "name": "Zweiter Name", "avatar": "bilder/avatar-2.jpg" }
+]
+}
