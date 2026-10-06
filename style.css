@@ -11,7 +11,40 @@
     font-style: normal;
     font-weight: 500;
 }
+@import "tailwindcss";
 
+.Webinar{
+    background-color: #D2E0EB;
+}
+.Vortrag{
+    background-color: #D2E0EB;
+}
+.Workshop{
+    background-color: #C6DFDB;
+}
+
+.E-Learning{
+     background-color: #DEDEC3;
+}
+
+.filter{
+    display: flex;
+    height: 48px;
+    overflow: hidden;
+    flex-direction:column;
+    border-radius: 999px;
+    border-color: 1px #232323;
+    background-color: #fff;
+}
+.suche{
+    display: flex;
+    height: 48px;
+    overflow: hidden;
+    flex-direction:column;
+    border-radius: 999px;
+    border-color: 1px #232323;
+    background-color: #fff;
+}
 body{
     font-family: "Noto sant";
     font-weight: 400;    
@@ -72,14 +105,22 @@ body{
     position: absolute;
     left: 16px;
     bottom: 30px;
-    display: flex;
+    width:1%;
+
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .badge{
+    display: flex;
     font-family: "Noto sant";
     font-weight: 500;
+    align-items: center;
     background-color: white;
-    height: 32px;    
+    height: 32px;
+    width: auto;    
     border: 1px solid black;
     border-radius: 6px;
     padding: 8px;
@@ -91,10 +132,13 @@ body{
 }
 
 .filterbar{
-    padding-top: 64px;
-    padding-bottom: 64px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+        padding-top: 64px;
+        padding-bottom: 64px;
+        width:95%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+
 }
 
 .avatar1 {
@@ -137,11 +181,13 @@ body{
     display: inline-block;
 
 }
-
+.platzhaltercolorbar{
+    flex-grow: 2;
+}
 .colorbar{
     width: 100%;
     height: 6px;
-    background-color: #D2E0EB;
+
 }
 /* grid*/
 .container{
@@ -188,7 +234,7 @@ Brakpoints
 1024  Pixel (Ipad   quer    )
 */
 /*Media*/
-@media (max-width: 1024px){
+@media (max-width: 1024){
     .container{
         width:95%;
         margin-right: auto;
@@ -204,6 +250,14 @@ Brakpoints
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+    .filterbar{
+        padding-top: 64px;
+        padding-bottom: 64px;
+        width:95%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
 }

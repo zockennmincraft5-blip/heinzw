@@ -1,17 +1,394 @@
-{
+[
+  {
     "id": "nachhaltiges-bauen-grundlagen",
     "titel": "Nachhaltiges Bauen – Grundlagen & Praxis",
-    "beschreibung": "Lernen Sie die Neuesten Standards und Methoden für nachhaltiges Bauene kennen",
+    "beschreibung": "Lernen Sie die neuesten Standards und Methoden für nachhaltiges Bauen kennen.",
     "format": "Webinar",
+    "thema": "Nachhaltigkeit",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-10-08T10:30:00",
+    "ende": "2026-10-08T11:00:00",
+    "dauerMinuten": null,
+    "ort": "Online",
+    "bild": "../bilder/kurs-01.jpg",
+    "dozenten": [
+      { "name": "Mareike Vosskamp", "avatar": "../bilder/avatar-01.jpg" },
+      { "name": "Tobias Lehnhardt", "avatar": "../bilder/avatar-02.jpg" }
+    ]
+  },
+  {
+    "id": "brandschutz-im-holzbau",
+    "titel": "Brandschutz im Holzbau",
+    "beschreibung": "Anforderungen, Normen und praktische Lösungen für den Brandschutz im modernen Holzbau.",
+    "format": "Workshop",
+    "thema": "Brandschutz",
+    "anbieter": "Institut für Baukonstruktion",
+    "beginn": "2026-10-09T09:00:00",
+    "ende": "2026-10-09T16:30:00",
+    "dauerMinuten": null,
+    "ort": "Berlin",
+    "bild": "../bilder/kurs-02.jpg",
+    "dozenten": [
+      { "name": "Gerrit Aalbers", "avatar": "../bilder/avatar-03.jpg" }
+    ]
+  },
+  {
+    "id": "aussenraumgestaltung-landschaftsarchitektur",
+    "titel": "Außenraumgestaltung & Landschaftsarchitektur",
+    "beschreibung": "Planungsmethoden und Gestaltungsprinzipien für nachhaltige Außenanlagen.",
+    "format": "E-Learning",
+    "thema": "Architektur",
+    "anbieter": "Heinze Akademie",
+    "beginn": null,
+    "ende": null,
+    "dauerMinuten": 30,
+    "ort": "Online",
+    "bild": "../bilder/kurs-03.jpg",
+    "dozenten": [
+      { "name": "Silke Rautenberg", "avatar": "../bilder/avatar-04.jpg" }
+    ]
+  },
+  {
+    "id": "bim-grundlagen-fuer-architekten",
+    "titel": "BIM-Grundlagen für Architekten",
+    "beschreibung": "Einführung in Building Information Modeling – von der Theorie zur praktischen Anwendung.",
+    "format": "Webinar",
+    "thema": "BIM",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-10-14T10:30:00",
+    "ende": "2026-10-14T11:30:00",
+    "dauerMinuten": null,
+    "ort": "Online",
+    "bild": "../bilder/kurs-04.jpg",
+    "dozenten": [
+      { "name": "Jonas Pfeifferling", "avatar": "../bilder/avatar-05.jpg" }
+    ]
+  },
+  {
+    "id": "projektmanagement-im-bauwesen",
+    "titel": "Projektmanagement im Bauwesen",
+    "beschreibung": "Termine, Kosten und Qualität im Griff behalten – Werkzeuge für die Projektsteuerung.",
+    "format": "Workshop",
+    "thema": "Projektmanagement",
+    "anbieter": "Baukammer Süd",
+    "beginn": "2026-10-20T09:30:00",
+    "ende": "2026-10-20T17:00:00",
+    "dauerMinuten": null,
+    "ort": "Stuttgart",
+    "bild": "../bilder/kurs-05.jpg",
+    "dozenten": [
+      { "name": "Annika Thurgau", "avatar": "../bilder/avatar-06.jpg" },
+      { "name": "Pit Stellbrink", "avatar": "../bilder/avatar-07.jpg" }
+    ]
+  },
+  {
+    "id": "bauen-im-bestand",
+    "titel": "Bauen im Bestand – Sanierung & Umnutzung",
+    "beschreibung": "Was beim Weiterbauen an vorhandener Substanz rechtlich und konstruktiv zu beachten ist.",
+    "format": "Vortrag",
+    "thema": "Architektur",
+    "anbieter": "Architektenkammer Nord",
+    "beginn": "2026-10-27T18:00:00",
+    "ende": "2026-10-27T20:00:00",
+    "dauerMinuten": null,
+    "ort": "Hamburg",
+    "bild": "../bilder/kurs-06.jpg",
+    "dozenten": [
+      { "name": "Henrike Bollmann", "avatar": "../bilder/avatar-08.jpg" }
+    ]
+  },
+  {
+    "id": "epds-lesen-und-anwenden",
+    "titel": "EPDs richtig lesen und anwenden",
+    "beschreibung": "Umweltproduktdeklarationen verstehen und für die Ökobilanz eines Gebäudes nutzen.",
+    "format": "E-Learning",
     "thema": "EPDs",
     "anbieter": "Heinze Akademie",
-    "beginn": "2026-08-11T10:30:00", 
-    "ende": "2026-08-11T11:00:00",
-    "dauerMinuten": null, 
+    "beginn": null,
+    "ende": null,
+    "dauerMinuten": 45,
     "ort": "Online",
-    "bild": "../Bilder/kurs-01.jpg",
+    "bild": "../bilder/kurs-07.jpg",
     "dozenten": [
-    { "name": "Erfundener Name", "avatar": "bilder/avatar-1.jpg" },
-    { "name": "Zweiter Name", "avatar": "bilder/avatar-2.jpg" }
+      { "name": "Mareike Vosskamp", "avatar": "../bilder/avatar-01.jpg" }
+    ]
+  },
+  {
+    "id": "nachhaltige-fassaden",
+    "titel": "Nachhaltige Fassaden in der Praxis",
+    "beschreibung": "Materialwahl, Aufbau und Lebenszyklus – Fassaden zwischen Gestaltung und Ökobilanz.",
+    "format": "Workshop",
+    "thema": "Nachhaltigkeit",
+    "anbieter": "Fassadenforum",
+    "beginn": "2026-11-05T09:00:00",
+    "ende": "2026-11-05T16:00:00",
+    "dauerMinuten": null,
+    "ort": "München",
+    "bild": "../bilder/kurs-08.jpg",
+    "dozenten": [
+      { "name": "Caspar Welling", "avatar": "../bilder/avatar-09.jpg" },
+      { "name": "Yasmin Oderbruch", "avatar": "../bilder/avatar-10.jpg" },
+      { "name": "Tobias Lehnhardt", "avatar": "../bilder/avatar-02.jpg" }
+    ]
+  },
+  {
+    "id": "bim-in-der-ausfuehrungsplanung",
+    "titel": "BIM in der Ausführungsplanung",
+    "beschreibung": "Vom Modell zur Baustelle: Kollisionsprüfung, Mengenermittlung und Datenübergabe.",
+    "format": "Webinar",
+    "thema": "BIM",
+    "anbieter": "digitalBAU Institut",
+    "beginn": "2026-11-12T14:00:00",
+    "ende": "2026-11-12T15:30:00",
+    "dauerMinuten": null,
+    "ort": "Online",
+    "bild": "../bilder/kurs-09.jpg",
+    "dozenten": [
+      { "name": "Jonas Pfeifferling", "avatar": "../bilder/avatar-05.jpg" }
+    ]
+  },
+  {
+    "id": "re-use-und-zirkulaeres-bauen",
+    "titel": "Re-Use und zirkuläres Bauen",
+    "beschreibung": "Bauteile wiederverwenden statt entsorgen – Ansätze, Grenzen und gebaute Beispiele.",
+    "format": "Vortrag",
+    "thema": "Nachhaltigkeit",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-11-26T17:30:00",
+    "ende": "2026-11-26T19:00:00",
+    "dauerMinuten": null,
+    "ort": "Köln",
+    "bild": "../bilder/kurs-10.jpg",
+    "dozenten": [
+      { "name": "Silke Rautenberg", "avatar": "../bilder/avatar-04.jpg" }
+    ]
+  },
+  {
+    "id": "baugeschichte-wohnbau-der-moderne",
+    "titel": "Baugeschichte: Wohnbau der Moderne",
+    "beschreibung": "Siedlungsbau zwischen 1920 und 1970 – Haltungen, Typologien und ihr Erbe im Bestand.",
+    "format": "Vortrag",
+    "thema": "Architektur",
+    "anbieter": "Architektenkammer Hessen",
+    "beginn": "2026-12-10T18:30:00",
+    "ende": "2026-12-10T20:00:00",
+    "dauerMinuten": null,
+    "ort": "Frankfurt am Main",
+    "bild": "../bilder/kurs-11.jpg",
+    "dozenten": [
+      { "name": "Henrike Bollmann", "avatar": "../bilder/avatar-08.jpg" }
+    ]
+  },
+  {
+    "id": "wettbewerbe-erfolgreich-einreichen",
+    "titel": "Wettbewerbe erfolgreich einreichen",
+    "beschreibung": "Von der Auslobung bis zur Abgabe: Formalien, Zeitplanung und typische Ausschlussgründe.",
+    "format": "E-Learning",
+    "thema": "Projektmanagement",
+    "anbieter": "Heinze Akademie",
+    "beginn": null,
+    "ende": null,
+    "dauerMinuten": 60,
+    "ort": "Online",
+    "bild": "../bilder/kurs-12.jpg",
+    "dozenten": [
+      { "name": "Annika Thurgau", "avatar": "../bilder/avatar-06.jpg" }
+    ]
+  },
+  {
+    "id": "nachhaltiges-bauen-grundlagen",
+    "titel": "Nachhaltiges Bauen – Grundlagen & Praxis",
+    "beschreibung": "Lernen Sie die neuesten Standards und Methoden für nachhaltiges Bauen kennen.",
+    "format": "Webinar",
+    "thema": "Nachhaltigkeit",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-10-08T10:30:00",
+    "ende": "2026-10-08T11:00:00",
+    "dauerMinuten": null,
+    "ort": "Online",
+    "bild": "../bilder/kurs-01.jpg",
+    "dozenten": [
+      { "name": "Mareike Vosskamp", "avatar": "../bilder/avatar-01.jpg" },
+      { "name": "Tobias Lehnhardt", "avatar": "../bilder/avatar-02.jpg" }
+    ]
+  },
+  {
+    "id": "brandschutz-im-holzbau",
+    "titel": "Brandschutz im Holzbau",
+    "beschreibung": "Anforderungen, Normen und praktische Lösungen für den Brandschutz im modernen Holzbau.",
+    "format": "Workshop",
+    "thema": "Brandschutz",
+    "anbieter": "Institut für Baukonstruktion",
+    "beginn": "2026-10-09T09:00:00",
+    "ende": "2026-10-09T16:30:00",
+    "dauerMinuten": null,
+    "ort": "Berlin",
+    "bild": "../bilder/kurs-02.jpg",
+    "dozenten": [
+      { "name": "Gerrit Aalbers", "avatar": "../bilder/avatar-03.jpg" }
+    ]
+  },
+  {
+    "id": "aussenraumgestaltung-landschaftsarchitektur",
+    "titel": "Außenraumgestaltung & Landschaftsarchitektur",
+    "beschreibung": "Planungsmethoden und Gestaltungsprinzipien für nachhaltige Außenanlagen.",
+    "format": "E-Learning",
+    "thema": "Architektur",
+    "anbieter": "Heinze Akademie",
+    "beginn": null,
+    "ende": null,
+    "dauerMinuten": 30,
+    "ort": "Online",
+    "bild": "../bilder/kurs-03.jpg",
+    "dozenten": [
+      { "name": "Silke Rautenberg", "avatar": "../bilder/avatar-04.jpg" }
+    ]
+  },
+  {
+    "id": "bim-grundlagen-fuer-architekten",
+    "titel": "BIM-Grundlagen für Architekten",
+    "beschreibung": "Einführung in Building Information Modeling – von der Theorie zur praktischen Anwendung.",
+    "format": "Webinar",
+    "thema": "BIM",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-10-14T10:30:00",
+    "ende": "2026-10-14T11:30:00",
+    "dauerMinuten": null,
+    "ort": "Online",
+    "bild": "../bilder/kurs-04.jpg",
+    "dozenten": [
+      { "name": "Jonas Pfeifferling", "avatar": "../bilder/avatar-05.jpg" }
+    ]
+  },
+  {
+    "id": "projektmanagement-im-bauwesen",
+    "titel": "Projektmanagement im Bauwesen",
+    "beschreibung": "Termine, Kosten und Qualität im Griff behalten – Werkzeuge für die Projektsteuerung.",
+    "format": "Workshop",
+    "thema": "Projektmanagement",
+    "anbieter": "Baukammer Süd",
+    "beginn": "2026-10-20T09:30:00",
+    "ende": "2026-10-20T17:00:00",
+    "dauerMinuten": null,
+    "ort": "Stuttgart",
+    "bild": "../bilder/kurs-05.jpg",
+    "dozenten": [
+      { "name": "Annika Thurgau", "avatar": "../bilder/avatar-06.jpg" },
+      { "name": "Pit Stellbrink", "avatar": "../bilder/avatar-07.jpg" }
+    ]
+  },
+  {
+    "id": "bauen-im-bestand",
+    "titel": "Bauen im Bestand – Sanierung & Umnutzung",
+    "beschreibung": "Was beim Weiterbauen an vorhandener Substanz rechtlich und konstruktiv zu beachten ist.",
+    "format": "Vortrag",
+    "thema": "Architektur",
+    "anbieter": "Architektenkammer Nord",
+    "beginn": "2026-10-27T18:00:00",
+    "ende": "2026-10-27T20:00:00",
+    "dauerMinuten": null,
+    "ort": "Hamburg",
+    "bild": "../bilder/kurs-06.jpg",
+    "dozenten": [
+      { "name": "Henrike Bollmann", "avatar": "../bilder/avatar-08.jpg" }
+    ]
+  },
+  {
+    "id": "epds-lesen-und-anwenden",
+    "titel": "EPDs richtig lesen und anwenden",
+    "beschreibung": "Umweltproduktdeklarationen verstehen und für die Ökobilanz eines Gebäudes nutzen.",
+    "format": "E-Learning",
+    "thema": "EPDs",
+    "anbieter": "Heinze Akademie",
+    "beginn": null,
+    "ende": null,
+    "dauerMinuten": 45,
+    "ort": "Online",
+    "bild": "../bilder/kurs-07.jpg",
+    "dozenten": [
+      { "name": "Mareike Vosskamp", "avatar": "../bilder/avatar-01.jpg" }
+    ]
+  },
+  {
+    "id": "nachhaltige-fassaden",
+    "titel": "Nachhaltige Fassaden in der Praxis",
+    "beschreibung": "Materialwahl, Aufbau und Lebenszyklus – Fassaden zwischen Gestaltung und Ökobilanz.",
+    "format": "Workshop",
+    "thema": "Nachhaltigkeit",
+    "anbieter": "Fassadenforum",
+    "beginn": "2026-11-05T09:00:00",
+    "ende": "2026-11-05T16:00:00",
+    "dauerMinuten": null,
+    "ort": "München",
+    "bild": "../bilder/kurs-08.jpg",
+    "dozenten": [
+      { "name": "Caspar Welling", "avatar": "../bilder/avatar-09.jpg" },
+      { "name": "Yasmin Oderbruch", "avatar": "../bilder/avatar-10.jpg" },
+      { "name": "Tobias Lehnhardt", "avatar": "../bilder/avatar-02.jpg" }
+    ]
+  },
+  {
+    "id": "bim-in-der-ausfuehrungsplanung",
+    "titel": "BIM in der Ausführungsplanung",
+    "beschreibung": "Vom Modell zur Baustelle: Kollisionsprüfung, Mengenermittlung und Datenübergabe.",
+    "format": "Webinar",
+    "thema": "BIM",
+    "anbieter": "digitalBAU Institut",
+    "beginn": "2026-11-12T14:00:00",
+    "ende": "2026-11-12T15:30:00",
+    "dauerMinuten": null,
+    "ort": "Online",
+    "bild": "../bilder/kurs-09.jpg",
+    "dozenten": [
+      { "name": "Jonas Pfeifferling", "avatar": "../bilder/avatar-05.jpg" }
+    ]
+  },
+  {
+    "id": "re-use-und-zirkulaeres-bauen",
+    "titel": "Re-Use und zirkuläres Bauen",
+    "beschreibung": "Bauteile wiederverwenden statt entsorgen – Ansätze, Grenzen und gebaute Beispiele.",
+    "format": "Vortrag",
+    "thema": "Nachhaltigkeit",
+    "anbieter": "Heinze Akademie",
+    "beginn": "2026-11-26T17:30:00",
+    "ende": "2026-11-26T19:00:00",
+    "dauerMinuten": null,
+    "ort": "Köln",
+    "bild": "../bilder/kurs-10.jpg",
+    "dozenten": [
+      { "name": "Silke Rautenberg", "avatar": "../bilder/avatar-04.jpg" }
+    ]
+  },
+  {
+    "id": "baugeschichte-wohnbau-der-moderne",
+    "titel": "Baugeschichte: Wohnbau der Moderne",
+    "beschreibung": "Siedlungsbau zwischen 1920 und 1970 – Haltungen, Typologien und ihr Erbe im Bestand.",
+    "format": "Vortrag",
+    "thema": "Architektur",
+    "anbieter": "Architektenkammer Hessen",
+    "beginn": "2026-12-10T18:30:00",
+    "ende": "2026-12-10T20:00:00",
+    "dauerMinuten": null,
+    "ort": "Frankfurt am Main",
+    "bild": "../bilder/kurs-11.jpg",
+    "dozenten": [
+      { "name": "Henrike Bollmann", "avatar": "../bilder/avatar-08.jpg" }
+    ]
+  },
+  {
+    "id": "wettbewerbe-erfolgreich-einreichen",
+    "titel": "Wettbewerbe erfolgreich einreichen",
+    "beschreibung": "Von der Auslobung bis zur Abgabe: Formalien, Zeitplanung und typische Ausschlussgründe.",
+    "format": "E-Learning",
+    "thema": "Projektmanagement",
+    "anbieter": "Heinze Akademie",
+    "beginn": null,
+    "ende": null,
+    "dauerMinuten": 60,
+    "ort": "Online",
+    "bild": "../bilder/kurs-12.jpg",
+    "dozenten": [
+      { "name": "Annika Thurgau", "avatar": "../bilder/avatar-06.jpg" }
+    ]
+  }
 ]
-}
