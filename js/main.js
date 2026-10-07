@@ -1,8 +1,7 @@
 import Kurse from "./classes/Kurse.js"
 import Suchleiste from "./classes/Suchleiste.js"
-let kurse = new Kurse()
 let suche = new Suchleiste()
+let kurse = new Kurse()
 
-suche.anzeigen()
-kurse.start()
+
 export default (kurse)

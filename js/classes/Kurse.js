@@ -6,13 +6,17 @@ export default class Kurse {
     }
 
     start(courses){
-        let  kurs = courses
         let container_div = document.createElement("div")
         container_div.setAttribute("class", "container")
-        
-        kurs.forEach(kurse => {
+       
+        if(courses.length !==0){
+        courses.forEach(kurse => {
             container_div.insertAdjacentElement("beforeend", this.html_generien(kurse))
-        })
+        })}else{
+        let haupt_div = document.createElement("div")
+        haupt_div.textContent= "KEIN EINTRAG GEFUNDEN"
+        container_div.insertAdjacentElement("beforeend", haupt_div)
+    }
         this._anzeigen(container_div)
     }
 
@@ -98,6 +102,5 @@ export default class Kurse {
                         <div class="colorbar ${kurs_info.format}"></div>`
 
         return haupt_div
-
-}
+    }
 }

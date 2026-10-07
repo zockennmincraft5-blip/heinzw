@@ -13,38 +13,6 @@
 }
 @import "tailwindcss";
 
-.Webinar{
-    background-color: #D2E0EB;
-}
-.Vortrag{
-    background-color: #D2E0EB;
-}
-.Workshop{
-    background-color: #C6DFDB;
-}
-
-.E-Learning{
-     background-color: #DEDEC3;
-}
-
-.filter{
-    display: flex;
-    height: 48px;
-    overflow: hidden;
-    flex-direction:column;
-    border-radius: 999px;
-    border-color: 1px #232323;
-    background-color: #fff;
-}
-.suche{
-    display: flex;
-    height: 48px;
-    overflow: hidden;
-    flex-direction:column;
-    border-radius: 999px;
-    border-color: 1px #232323;
-    background-color: #fff;
-}
 body{
     font-family: "Noto sant";
     font-weight: 400;    
@@ -56,6 +24,51 @@ body{
     box-sizing: border-box;
 }
 
+.Webinar{
+    background-color: #D2E0EB;
+}
+
+.Vortrag{
+    background-color: #D2E0EB;
+}
+
+.Workshop{
+    background-color: #C6DFDB;
+}
+
+.E-Learning{
+     background-color: #DEDEC3;
+}
+
+.filterbar{
+        padding-top: 64px;
+        padding-bottom: 64px;
+        width:95%;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 12px;
+}
+
+.filter{
+    display: flex;
+    height: 48px;
+    overflow: hidden;
+    flex-direction:column;
+    border-radius: 999px;
+    border-color: 1px #232323;
+    background-color: #fff;
+}
+
+.suche{
+    display: flex;
+    height: 48px;
+    overflow: hidden;
+    flex-direction:column;
+    border-radius: 999px;
+    border-color: 1px #232323;
+    background-color: #fff;
+}
+
 .seitentitel{
     font-family: "Noto sant";
     font-weight: 500;
@@ -63,6 +76,7 @@ body{
     padding-bottom: 16px;
     text-align: center;
 }
+
 .unterzeile{
     padding-top: 16px;
     padding-bottom: 64px;
@@ -81,36 +95,46 @@ body{
     font-weight: 500;
     margin-top: 8px;
     margin-bottom: 8px;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
+
 .kartentext{
     margin-bottom: 40px;
     margin-top: 0px;
 }
+
 .icons{
     width: 14px;
     margin-right: 4px;
     text-align: center;
     vertical-align: middle;
 }
+
 .textpos{
     font-size: 16px;
     padding-right: 12px;
     display: flex;
     align-items: center;
 }
+
 .positions{
     position: relative;
 }
+
 .textInBild {
     position: absolute;
     left: 16px;
     bottom: 30px;
     width:1%;
-
     margin-right: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+}
+
+.kartenblock{
+    display: inline;
 }
 
 .badge{
@@ -120,7 +144,6 @@ body{
     align-items: center;
     background-color: white;
     height: 32px;
-    width: auto;    
     border: 1px solid black;
     border-radius: 6px;
     padding: 8px;
@@ -129,17 +152,9 @@ body{
 .dates{
     padding-top: 16px;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.filterbar{
-        padding-top: 64px;
-        padding-bottom: 64px;
-        width:95%;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 12px;
-
-}
 
 .avatar1 {
 	border-radius: 50%;
@@ -150,6 +165,7 @@ body{
 	border: 2px solid #fff;
     display: inline-block;
 }
+
 .avatar2{
 	border-radius: 50%;
 	width: 40px;
@@ -161,6 +177,7 @@ body{
     margin-left: -24px;
    
 }
+
 .avatar{
     display: inline-block;
     position: relative;
@@ -171,6 +188,7 @@ body{
 .platzhaltercard{
     flex-grow: 2;
 }
+
 .cardbutton{
     border-radius: 50%;
 	width: 40px;
@@ -181,14 +199,21 @@ body{
     display: inline-block;
 
 }
+
 .platzhaltercolorbar{
     flex-grow: 2;
 }
+
+.platzhalterfilterbar{
+    flex-grow: 0 0 100%;
+}
+
 .colorbar{
     width: 100%;
     height: 6px;
 
 }
+
 /* grid*/
 .container{
     width:95%;
@@ -198,16 +223,15 @@ body{
     gap: 24px;
 }
 
-[class *="col-"]{ 
+[class *="col-4"]{ 
     display: flex;
     min-height: 100%;
     border: 1px solid #232323;
     border-radius: 16px;
     overflow: hidden;
     flex-direction:column;
-    
-    
 }
+
 .karteninfo{
     padding:  0px 24px 8px 24px;
 }
@@ -220,13 +244,14 @@ body{
 .col-2{
     width: 33.33%;
 }
+
 .col-3{
     width: 50%;
 }
 .col-6{
     width: 100%;
-}*/
-
+}
+*/
 /*
 Brakpoints
 480   pixel (Iphone quer    )
@@ -234,16 +259,17 @@ Brakpoints
 1024  Pixel (Ipad   quer    )
 */
 /*Media*/
-@media (max-width: 1024){
+@media (max-width: 1250px){
     .container{
         width:95%;
         margin-right: auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
-    }
-}
-@media (max-width: 768px){
+        
+}}
+
+@media (max-width: 913px){
     .container{
         width:95%;
         margin-right: auto;
@@ -251,26 +277,51 @@ Brakpoints
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
+
     .filterbar{
         padding-top: 64px;
         padding-bottom: 64px;
         width:95%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
     }
 
-}
-@media (max-width: 650px){
+    .filter{
+        display: flex;
+        height: 40px;
+        overflow: hidden;
+        flex-direction:row;
+        border-radius: 999px;
+        border-color: 1px #232323;
+        background-color: #fff;
+    }
+
+    .suche{
+        display: flex;
+        height: 40px;
+        width: 206%;
+        overflow: hidden;
+        flex-direction:column;
+        border-radius: 999px;
+        border-color: 1px #232323;
+        background-color: #fff;
+    }
+
+    .platzhalterfilterbar{
+        display: none;
+}}
+
+@media (max-width: 680px){
     .container{
         width:95%;
         margin-right: auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 24px;
-}
+    }
+
     body{
     font-family: "Noto sant";
     font-weight: 400;    
-}
-}
+}}
