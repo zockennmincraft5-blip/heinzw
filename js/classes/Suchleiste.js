@@ -2,49 +2,63 @@ import courses from "../courses.json" with {type: "json"}
 import kurse from"../main.js"
 
 export default class Suchleiste{
-    constructor(){
-        this._kurse = courses
-        this._html_generien(this._kurse)
-        this._events()
-    }
-    _html_generien(kurse){
+        constructor(){
+            this._kurse = courses
+            this._html_generien(this._kurse)
+            this._events()
+        }
+        _html_generien(kurse){
 
-        let filterbar_div = document.createElement("div")
-        filterbar_div.setAttribute("class", "filterbar")
+            let filterbar_div = document.createElement("div")
+            filterbar_div.setAttribute("class", "filterbar")
 
-        let selekt_format = document.createElement("select")
-        selekt_format.setAttribute("form", "filterbar")
-        selekt_format.setAttribute("name", "format")
-        selekt_format.setAttribute("class", "filter")
-        selekt_format.setAttribute("id", "format")
+            let select_format = document.createElement("select")
+            select_format.setAttribute("form", "filterbar")
+            select_format.setAttribute("name", "format")
+            select_format.setAttribute("class", "filter")
+            select_format.setAttribute("id", "format")
+            
+            let select_button_format = document.createElement("button")
+            select_button_format.setAttribute("class", "button_format")
+            select_button_format.innerHTML = `
+                                              <img src="../icons/format.svg" alt="Format Icon" class="filter_icons"> <selectedcontent class="select_anzeige"></selectedcontent> 
+                                              <img src="../icons/chevron-down.svg" alt=" Icon" class="dropdown_icons">`
+            select_format.insertAdjacentElement("beforeend", select_button_format)
 
-        let formatoption = document.createElement("option")
-        formatoption.setAttribute("value", "")
-        formatoption.textContent= "Format"
-        selekt_format.insertAdjacentElement("beforeend",formatoption)
+            let formatoption = document.createElement("option")
+            formatoption.setAttribute("value", "")
+            formatoption.textContent = "format"
+            select_format.insertAdjacentElement("beforeend", formatoption)
 
-        let schon_im_filter =[]
-        kurse.forEach(kurselement =>{
-            if(!schon_im_filter.includes(kurselement.format)){
-                let formatoption = document.createElement("option")
-                schon_im_filter.push(kurselement.format)
-                formatoption.setAttribute("value", kurselement.format)
-                formatoption.textContent= kurselement.format
-                selekt_format.insertAdjacentElement("beforeend",formatoption)
-            }})
-        filterbar_div.insertAdjacentElement("beforeend", selekt_format)
+            let schon_im_filter = []
+            kurse.forEach(kurselement => {
+                if (kurselement.format && !schon_im_filter.includes(kurselement.format)) {
+                    let formatoption = document.createElement("option")
+                    schon_im_filter.push(kurselement.format)
+                    formatoption.setAttribute("value", kurselement.format)
+                    formatoption.textContent = kurselement.format
+                    select_format.insertAdjacentElement("beforeend", formatoption)
+                }
+            })
 
-        let selekt_thema = document.createElement("select")
-        selekt_thema.setAttribute("form", "filterbar")
-        selekt_thema.setAttribute("name", "thema")
-        selekt_thema.setAttribute("class", "filter")
-        selekt_thema.setAttribute("id", "thema")
-
+            filterbar_div.insertAdjacentElement("beforeend", select_format)
+        let select_thema = document.createElement("select")
+        select_thema.setAttribute("form", "filterbar")
+        select_thema.setAttribute("name", "thema")
+        select_thema.setAttribute("class", "filter")
+        select_thema.setAttribute("id", "thema")
+        let select_button_thema = document.createElement("button")
+        select_button_thema.setAttribute("class", "button_format")
+        select_button_thema.innerHTML = `
+                                          <img src="../icons/globe.svg" alt="Format Icon" class="filter_icons"> <selectedcontent class="select_anzeige"></selectedcontent> <img src="../icons/chevron-down.svg" alt=" Icon" class="filter_icons">
+                                          `
+        select_thema.insertAdjacentElement("beforeend", select_button_thema)
+        
         let themaoption = document.createElement("option")
         themaoption.setAttribute("value", "")
         themaoption.textContent= "Thema"
-        selekt_thema.insertAdjacentElement("beforeend",themaoption)
-
+        select_thema.insertAdjacentElement("beforeend",themaoption)
+        
         schon_im_filter =[]
         kurse.forEach(kurselement =>{
             if(!schon_im_filter.includes(kurselement.thema)){
@@ -52,20 +66,27 @@ export default class Suchleiste{
                 schon_im_filter.push(kurselement.thema)
                 themaoption.setAttribute("value", kurselement.thema)
                 themaoption.textContent= kurselement.thema
-                selekt_thema.insertAdjacentElement("beforeend",themaoption)
+                select_thema.insertAdjacentElement("beforeend",themaoption)
             }})
-        filterbar_div.insertAdjacentElement("beforeend", selekt_thema)
+        filterbar_div.insertAdjacentElement("beforeend", select_thema)
 
-        let selekt_anbieter = document.createElement("select")
-        selekt_anbieter.setAttribute("form", "filterbar")
-        selekt_anbieter.setAttribute("name", "anbieter")
-        selekt_anbieter.setAttribute("class", "filter")
-        selekt_anbieter.setAttribute("id", "anbieter")
+        let select_anbieter = document.createElement("select")
+        select_anbieter.setAttribute("form", "filterbar")
+        select_anbieter.setAttribute("name", "anbieter")
+        select_anbieter.setAttribute("class", "filter")
+        select_anbieter.setAttribute("id", "anbieter")
+
+        let select_button_anbieter = document.createElement("button")
+        select_button_anbieter.setAttribute("class", "button_format")
+        select_button_anbieter.innerHTML = `
+                                          <img src="../icons/building.svg" alt="Format Icon" class="filter_icons"> <selectedcontent class="select_anzeige"></selectedcontent> <img src="../icons/chevron-down.svg" alt=" Icon" class="filter_icons">
+                                          `
+        select_anbieter.insertAdjacentElement("beforeend", select_button_anbieter)
 
         let anbieteroption = document.createElement("option")
         anbieteroption.setAttribute("value", "")
         anbieteroption.textContent= "Anbieter"
-        selekt_anbieter.insertAdjacentElement("beforeend",anbieteroption)
+        select_anbieter.insertAdjacentElement("beforeend",anbieteroption)
 
         schon_im_filter =[]
         kurse.forEach(kurselement =>{
@@ -74,9 +95,9 @@ export default class Suchleiste{
                 schon_im_filter.push(kurselement.anbieter)
                 anbieteroption.setAttribute("value", kurselement.anbieter)
                 anbieteroption.textContent= kurselement.anbieter
-                selekt_anbieter.insertAdjacentElement("beforeend",anbieteroption)
+                select_anbieter.insertAdjacentElement("beforeend",anbieteroption)
             }})
-        filterbar_div.insertAdjacentElement("beforeend", selekt_anbieter)
+        filterbar_div.insertAdjacentElement("beforeend", select_anbieter)
         
         let inputdate = document.createElement("input")
         inputdate.setAttribute("type", "date")
@@ -96,7 +117,7 @@ export default class Suchleiste{
         inputtext.setAttribute("name", "suche")
         inputtext.setAttribute("form", "filterbar")
         inputtext.setAttribute("class", "suche")
-        inputtext.setAttribute("placeholder",  "   Suchen (min. 2 Buchstarben)")
+        inputtext.setAttribute("placeholder",  "   Suchen ")
         filterbar_div.insertAdjacentElement("beforeend", inputtext)
 
         this._anzeigen(filterbar_div)
