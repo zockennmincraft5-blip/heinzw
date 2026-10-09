@@ -12,8 +12,26 @@
     font-weight: 500;
 }
 @import "tailwindcss";
-
-body{
+.filterentfernen{
+    margin-left: 8px;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+}
+.filterbox{
+    margin-bottom: 16px;
+}
+.filterinfo{
+    display: inline;
+    height: 32px;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 8px;
+    border: 1px  solid #99a1af;
+    
+}
+.mainbereich{
     font-family: "Noto sant";
     font-weight: 400;    
     padding-left: 9.79166667%;
@@ -61,21 +79,53 @@ body{
     grid-template-columns: repeat(1, 1fr);
     gap: 8px;
 }
+#format{
+    position: absolute;
+    left: 200px;
+    opacity: 0;
+    pointer-events: none;
 
+}
 
-.button_format{
+#thema{
+    position: absolute;
+    left: 475px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#anbieter{
+    position: absolute;
+    left: 760px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#datum{
+    position: absolute;
+    left: 1020px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.button_filter{
+    padding-top: 3px;
+    padding-bottom: 5px;
     align-items: center;
     display: flex;
     background-color: white;
-    border: none;
-    
+    border-radius: 999px;
 }
 
 .filter_icons{
     display: flex;
+    margin-left: 16px;
+    margin-right: 16px;
     width: 24px;
 }
 .dropdown_icons{
+    padding-left: auto;
+    margin-right: 16px;
     width: 24px;
 }
 select, ::picker(select) {
@@ -87,6 +137,7 @@ select, ::picker(select) {
     align-items: center;
     padding: 8px;
 }
+
 
 
 .suche{
@@ -104,17 +155,21 @@ select, ::picker(select) {
     background-repeat: no-repeat;
 }
 
+
+
 .seitentitel{
     font-family: "Noto sant";
-    font-weight: 500;
+    font-weight: 500px;
+    font-size: 48px;
+    margin-bottom: 0px;
     padding-top: 88px;
     padding-bottom: 16px;
     text-align: center;
 }
 
 .unterzeile{
-    padding-top: 16px;
-    padding-bottom: 64px;
+    font-family: "Noto sant";
+    font-size: 20px;
     text-align: center;
 }
 
@@ -240,6 +295,10 @@ select, ::picker(select) {
     flex-grow: 2;
 }
 
+.platzhaltebuttons{
+    flex-grow: 2;
+}
+
 
 .colorbar{
     width: 100%;
@@ -268,7 +327,6 @@ select, ::picker(select) {
 .karteninfo{
     padding:  0px 24px 8px 24px;
 }
-
 
 /*.col-1{
     width: 16.66%;
@@ -302,23 +360,44 @@ Brakpoints
         
 }
 }
-
-@media (max-width: 913px){
-    .container{
-        width:95%;
-        margin-right: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-
-    .filterbar{
+@media (max-width: 1050px){
+        .filterbar{
         padding-top: 64px;
         padding-bottom: 64px;
         width:95%;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
+    }
+    #format{
+    position: absolute;
+    left: 10%;
+    opacity: 0;
+    pointer-events: none;
+
+    }
+
+    #thema{
+        position: absolute;
+        left: 55%;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #anbieter{
+        position: absolute;
+        left: 10%;
+        top: 680px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #datum{
+        position: absolute;
+        left: 50%;
+        top: 730px;
+        opacity: 0;
+        pointer-events: none;
     }
 
     .filter{
@@ -346,6 +425,17 @@ Brakpoints
         display: none;
 }
     
+}
+@media (max-width: 913px){
+    .container{
+        width:95%;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+
 }
 
 @media (max-width: 680px){

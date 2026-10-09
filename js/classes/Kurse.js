@@ -21,7 +21,7 @@ export default class Kurse {
     }
 
     _anzeigen(container_div){
-        let filltabar = document.querySelector(".filterbar")
+        let filltabar = document.querySelector(".filterbox")
         let kurs_container = document.querySelector(".container")
         if (filltabar !== null){
             if(kurs_container !== null){
@@ -78,10 +78,11 @@ export default class Kurse {
                             <img src="icons/clock.svg" alt="Clockr" class="icons"><span class="textpos">${dauerMinuten} </span> 
                             <img src="icons/location.svg" alt="Location" class="icons"><span class="textpos">${kurs_info.ort}</span>
                         </div>
-                        <div class="karteninfo">
+                        <div >
                             <h2 class="kartentitel">${kurs_info.titel}</h2>
                             <p>${kurs_info.beschreibung}</p>
                         </div>
+                        <div class="platzhaltercolorbar"></div>
                         <div class="avatar">
                             <div>
                                 <div class="avatar1 ">
@@ -98,7 +99,7 @@ export default class Kurse {
                         </div>
                     </div> 
                      
-                        <div class="platzhaltercolorbar"></div>
+                        
                         <div class="colorbar ${kurs_info.format}"></div>`
 
         return haupt_div
